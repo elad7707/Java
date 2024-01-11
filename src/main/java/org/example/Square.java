@@ -1,6 +1,6 @@
 package org.example;
 
-public class Square {
+public class Square implements Shape {
     private int size;
     private char block;
     public Square(int size, char block) {

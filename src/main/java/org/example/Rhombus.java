@@ -1,6 +1,6 @@
 package org.example;
 
-public class Rhombus {
+public class Rhombus implements Shape{
     private Line[] lineArray;
 
     public Rhombus(int radius, char block) {
