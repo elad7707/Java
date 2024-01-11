@@ -18,15 +18,6 @@ public class Line {
     }
 
 
-//    @Override
-//    public String toString() {
-//        return "Line{" +
-//                "blockNum=" + blockNum +
-//                ", whitespaceNum=" + whitespaceNum +
-//                ", blockType=" + blockType +
-//                '}';
-//    }
-
     public Line(int blockNum, int whitespaceNum, char blockType) {
         this.blockNum = blockNum;
         this.whitespaceNum = whitespaceNum;
