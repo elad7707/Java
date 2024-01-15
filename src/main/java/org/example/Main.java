@@ -7,10 +7,9 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter shape's array size");
         Shape[] shapes = new Shape[scan.nextInt()];
-        Factory factory = new Factory();
         for (int i = 0; i < shapes.length; i++) {
             System.out.println("Please enter shape[" + i + "] type:");
-            shapes[i] = factory.getShape(scan.next());
+            shapes[i] = Factory.getShape(scan.next());
         }
         for (int i = 0; i < shapes.length; i++) {
             shapes[i].draw();
