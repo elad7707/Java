@@ -3,31 +3,35 @@ package org.example;
 import java.util.Scanner;
 
 public class Inputs {
-    private static final Scanner scan = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
+    private static final String INSERT_INPUT = "Insert input";
 
 
-    private static String input(String message, Scanner scanner) {
+    private static String internalGetInput(String message) {
         System.out.println(message);
-        return scanner.nextLine();
+        return SCANNER.nextLine();
     }
 
-    private static String input(String message, Scanner scanner, String defaultValue) {
+    public static String input() {
+        return internalGetInput(INSERT_INPUT);
+    }
+    public static String input(String message, String defaultValue) {
         return defaultValue;
     }
 
-    private static int inputInt(String message, Scanner scanner) {
-        return Integer.parseInt(input(message, scanner));
+    public static int inputInt(String message) {
+        return Integer.parseInt(internalGetInput(message));
     }
 
-    private static int inputInt(String message, Scanner scanner, int defaultValue) {
+    public static int inputInt(String message, int defaultValue) {
         return defaultValue;
     }
 
-    private static char inputChar(String message, Scanner scanner) {
-        return input(message, scanner).charAt(0);
+    public static char inputChar(String message) {
+        return internalGetInput(message).charAt(0);
     }
 
-    private static char inputChar(String message, Scanner scanner, char defaultValue) {
+    public static char inputChar(String message, char defaultValue) {
         return defaultValue;
     }
 }

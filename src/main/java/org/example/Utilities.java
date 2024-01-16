@@ -1,22 +1,30 @@
 package org.example;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class Utilities {
-    private String get_string() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.next();
-    }
+    private static final Scanner SCANNER = new Scanner(System.in);
 
-    private boolean isStringInt(String string) {
+    private static String getString(String message) {
+        System.out.println(message);
+        return SCANNER.nextLine();
+    }
+    public static int getInteger(String message) {
         try {
-            Integer.parseInt(string);
+            return Integer.parseInt(getString(message));
         } catch (NumberFormatException e) {
-            e.printStackTrace();
-            return false;
+            System.out.println("Invalid input. Please try again:");
+            return getInteger(message);
         }
-        return true;
     }
 
-    Integer number = Integer.valueOf(string);
+    public static char getchar(String message){
+        while (true) {
+            String input = getString(message);
+            if(input.length() == 1)
+                return input.charAt(0);
+            System.out.println("Invalid Input. ARE U FUCKING DUMB!???");
+        }
+    }
 }

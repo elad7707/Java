@@ -9,38 +9,24 @@ public class Factory {
         Scanner scanner = new Scanner(System.in);
         switch (shapeName) {
             case ("Rectangle"): {
-                System.out.println("Enter rectangle height:");
-                int height = scanner.nextInt();
-                System.out.println("Enter rectangle length:");
-                int length = scanner.nextInt();
-                System.out.println("Enter rectangle block:");
-                String input = "";
-                while (input.length() != 1) {
-                    System.out.println("STUPID!!!");
-                    input = scanner.next();
-                }
-                char block = input.charAt(0);
+                int height = Utilities.getInteger("Enter rectangle height:");
+                int length = Utilities.getInteger("Enter rectangle length:");
+                char block = Utilities.getchar("Enter rectangle block:");
                 return new Rectangle(height, length, block);
             }
             case ("Pyramid"): {
-                System.out.println("Enter Pyramid height:");
-                int height = scanner.nextInt();
-                System.out.println("Enter Pyramid block:");
-                char block = scanner.next().charAt(0);
+                int height = Utilities.getInteger("Enter Pyramid height:");
+                char block = Utilities.getchar("Enter Pyramid block:");
                 return new Pyramid(height, block);
             }
             case ("Square"): {
-                System.out.println("Enter square size:");
-                int size = scanner.nextInt();
-                System.out.println("Enter square block:");
-                char block = scanner.next().charAt(0);
+                int size = Utilities.getInteger("Enter square size:");
+                char block = Utilities.getchar("Enter Square block:");
                 return new Square(size, block);
             }
             case ("Rhombus"): {
-                System.out.println("Enter rhombus size:");
-                int size = scanner.nextInt();
-                System.out.println("Enter rhombus block:");
-                char block = scanner.next().charAt(0);
+                int size = Utilities.getInteger("Enter rhombus size:");
+                char block = Utilities.getchar("Enter Rhombus block:");
                 return new Rhombus(size, block);
             }
             default: {
